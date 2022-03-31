@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Wedding Invite Planner</title>
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+
+  <body>
+    
+    <div class="header">
+        <h1>Design Your Themed Wedding Invitation</h1>
+    </div>
+
+<div class="row">
+
+    <div class="column left">
+
+    <h3>STEP 1: Entre your wedding details below</h3>
+
+    
+        <label>Lucky person one:</label><br>
+        <input type="text" id="nameOne" onkeyup="liveText()">
+        <br><br><br>
+
+        <label>Lucky person two:</label><br>
+        <input type="text" id="nameTwo" onkeyup="liveText()">
+        <br><br><br>
+
+        <label>The date of your special day:</label><br>
+        <input type="date" id="date" onkeyup="liveText()">
+        <br><br><br>
+
+        <label>What time is it kiching off:</label><br>
+        <input type="time" id="time" onkeyup="liveText()">
+        <br><br><br>
+
+        <label>Where will all the fun happen?</label><br>
+        <input type="text" id="venue" onkeyup="liveText()">
+        <br><br><br>
+
+        <label>Venue address:</label><br>
+        <input type="text" id="address" onkeyup="liveText()">
+        <br><br><br>
+
+        <label>Dress code:</label><br>
+        <input type="text" id="dress" onkeyup="liveText()">
+        <br><br><br>
+
+    </div>
+
+    <div class="column middle">
+
+      <h3>STEP 2: Decide on your theme</h3>
+
+      <br>
+
+          <button class="button" type="button" id="rodeo" onclick="rodeoBackground()">Rodeo<br>Ranch</button>
+          <br><br><br>
+  
+          <button class="button" type="button" id="disco" onclick="changeImage()">Disco<br>Fever!</button>
+          <br><br><br>
+  
+          <button class="button" type="button" id="bright" onclick="brightBackground()">Bright<br>& Bold</button>
+          <br><br><br>
+  
+          <button class="button" type="button" id="jungle" onclick="jungleBackground()">Jungle<br>Party</button>
+          <br><br><br>
+  
+      </div>
+
+<div class="column right">
+
+  <h3>STEP 3: See your invitation come alive</h3>
+
+    <div class="container">
+        <p id="inviteTextLive" class="inviteTextLive"></p>
+
+        <img id="backgroundImage" src="CSS/inviteBackground1.png" class="center">
+
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>Footer</p>
+  </div>
+    
+    <script src="Script/script.js"></script>
+  </body>
+
+</html>
