@@ -1,92 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <title>Wedding Invite Planner</title>
-    <link rel="stylesheet" href="css/style.css">
-
-  </head>
-
-  <body>
     
-    <div class="header">
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Benne' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Bad Script' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Bellota' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Contrail One' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Carrois Gothic SC' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Concert One' rel='stylesheet'>
+
+</head>
+
+<body>
+    
+  <div class="header">
         <h1>Design Your Themed Wedding Invitation</h1>
-    </div>
+  </div>
 
 <div class="row">
 
-    <div class="column left">
+  <div class="column left">
 
-    <h3>STEP 1: Entre your wedding details below</h3>
+      <h3>STEP 1: Entre your wedding details</h3>
 
-    
+        <b>
         <label>Lucky person one:</label><br>
         <input type="text" id="nameOne" onkeyup="liveText()">
-        <br><br><br>
+        <br><br>
 
         <label>Lucky person two:</label><br>
         <input type="text" id="nameTwo" onkeyup="liveText()">
-        <br><br><br>
+        <br><br>
 
-        <label>The date of your special day:</label><br>
-        <input type="date" id="date" onkeyup="liveText()">
-        <br><br><br>
+        <label>Date of your special day:<br>
+        <em>i.e. Saturday 29 March, 2022</em>      
+        </label><br>
+        <input type="text" id="date" onkeyup="liveDate()">
+        <br><br>
 
-        <label>What time is it kiching off:</label><br>
-        <input type="time" id="time" onkeyup="liveText()">
-        <br><br><br>
+        <label>What time is the party kicking off:</label><br>
+        <em>i.e. Start 2.00pm</em><br> 
+        <input type="text" id="time" onkeyup="liveTime()">
+        <br><br>
 
-        <label>Where will all the fun happen?</label><br>
-        <input type="text" id="venue" onkeyup="liveText()">
-        <br><br><br>
+        <label>Where's all the fun happening?</label><br>
+        <em>i.e. Venue</em><br>
+        <input type="text" id="venue" onkeyup="liveVenue()">
+        <br><br>
 
         <label>Venue address:</label><br>
-        <input type="text" id="address" onkeyup="liveText()">
-        <br><br><br>
+        <input type="text" id="address" onkeyup="liveAddress()">
+        <br><br>
 
         <label>Dress code:</label><br>
-        <input type="text" id="dress" onkeyup="liveText()">
+        <em>i.e. a touch of disco</em>
+        <input type="text" id="dress" onkeyup="liveDress()">
         <br><br><br>
+        </b>
 
-    </div>
+  </div>
 
-    <div class="column middle">
+  <div class="column middle">
 
-      <h3>STEP 2: Decide on your theme</h3>
+      <h3>STEP 2: Select your theme</h3>
 
-      <br>
-
-          <button class="button" type="button" id="rodeo" onclick="rodeoBackground()">Rodeo<br>Ranch</button>
-          <br><br><br>
+          <button class="button" type="button" onclick="rodeoBackground()">
+            <img src="CSS/rodeoButton.png" alt="Click for rodeo theme">
+          </button>
+          <br>
   
-          <button class="button" type="button" id="disco" onclick="changeImage()">Disco<br>Fever!</button>
-          <br><br><br>
+          <button class="button" type="button" id="disco" onclick="discoBackground()">
+            <img src="CSS/discoButton.png" alt="Click for disco theme">
+          </button>
+          <br>
   
-          <button class="button" type="button" id="bright" onclick="brightBackground()">Bright<br>& Bold</button>
-          <br><br><br>
+          <button class="button" type="button" id="bright" onclick="brightBackground()">
+            <img src="CSS/brightButton.png" alt="Click for bright theme">
+          </button>
+          <br>
   
-          <button class="button" type="button" id="jungle" onclick="jungleBackground()">Jungle<br>Party</button>
-          <br><br><br>
-  
-      </div>
+          <button class="button" type="button" id="jungle" onclick="jungleBackground()">
+            <img src="CSS/jungleButton.png" alt="Click for jungle theme">
+          </button>
+          <br>
+  </div>
 
-<div class="column right">
+  <div class="column middleTwo">
 
-  <h3>STEP 3: See your invitation come alive</h3>
+    <h3>STEP 3: See your invitation come alive</h3>
 
     <div class="container">
-        <p id="inviteTextLive" class="inviteTextLive"></p>
 
-        <img id="backgroundImage" src="CSS/inviteBackground1.png" class="center">
+      <div class="inviteTextLive">
+        <div id="changeFont">
+          <h2>Get excited!</h2>
+          <h4 id="entreNames"></h4>
+          <p>The important details</p>
+          <p id="entreDate">Date:</p>
+          <p id="entreTime">Time:</p>
+          <p id="entreVenue">Venue:</p>
+          <p id="entreAddress">Address:</p>
+          <p id="entreDress">Dress code:</p>
+          <p>We cannot wait to see you there and celebrate this speical day with you.</p>
+        </div>
+      </div>
 
+        <div>
+          <img class="center" id="change" src="CSS/Background.png" alt="Theme not yet selected">
+        </div>
     </div>
+  </div>
+
+  <div class="column right">
+
+      <h3>STEP 4: Happy with the design? Select one of the below options</h3>
+      <br>
+    
+            <button class="button" type="button" onclick="alertPrint()">
+              <img src="CSS/printButton.png" alt="Click to print invite">
+            </button>
+            <br><br>
+      
+            <button class="button" type="button" onclick="alertEmail()">
+              <img src="CSS/emailButton.png" alt="Click to email invite">
+            </button>
+            <br>
+  </div>
 
 </div>
 
-<div class="footer">
-    <p>Footer</p>
+  <div class="footer">
+    <p>Thanks for using our wedding invitation building. Wishing you a super fun wedding day!</p>
   </div>
+
     
     <script src="Script/script.js"></script>
-  </body>
+</body>
 
 </html>
